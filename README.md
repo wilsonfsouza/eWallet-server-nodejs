@@ -18,3 +18,25 @@ If the migration has not been sent to production (it's only on your machine), yo
 ```
 npm run knex -- migrate:rollback
 ```
+
+timestamp
+- MySQL => defaultTo('NOW()')
+- SQLIte/postgres => defaultTo('CURRENT_TIMESTAMP')
+
+These, don't allow the flexibity to work with any database. An alternative is to use `knex.fn.now()`
+
+
+## Functional requirements
+- [] User must be able to create a new transaction
+- [] User must be able to see an account summary
+- [] User must be able to see all transactions that already happened
+- [] User must be able to see a single transaction
+
+## Business logic
+- [] A transaction can be either credit, adding to the total amount, or debit, subtracting the total amount
+- [] It must be possible to identify the user between requests
+- [] Users can only see the transaction they created
+
+## Non-Functional requirements
+
+- TBD
